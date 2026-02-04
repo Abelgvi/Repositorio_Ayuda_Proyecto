@@ -1,0 +1,198 @@
+/* ===== CONTENEDOR GENERAL ===== */
+.peluqueria {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+/* ===== HEADER ===== */
+.peluqueria-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 35px 30px;
+    background: linear-gradient(135deg,#6d28d9,#8b5cf6,#c084fc);
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(124,58,237,.3);
+}
+
+/* Título morado */
+.peluqueria-header h1 {
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg,#2d0b64,#6c41b6,#a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.peluqueria-header p {
+    color: #f3e8ff;
+    font-weight: 500;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.peluqueria-cita {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* formulario ocupa toda la fila inferior */
+.formulario-cita {
+    grid-column: 1 / -1;
+}
+
+/* ===== TARJETAS ===== */
+.calendario,
+.horarios,
+.formulario-cita {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(91,33,182,.1);
+}
+
+/* ===== TITULOS TARJETAS ===== */
+.calendario h2,
+.horarios h2,
+.formulario-cita h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg,#5b21b6,#7c3aed,#a855f7);
+    -webkit-text-fill-color:transparent;
+    margin-bottom: 15px;
+}
+
+/* ===== CALENDARIO ===== */
+.calendario-contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-fecha {
+    width: 100%;
+    padding: 11px;
+    border-radius: 8px;
+    border: 2px solid #e9d5ff;
+    font-weight: 600;
+}
+
+.input-fecha:focus {
+    outline: none;
+    border-color: #a855f7;
+}
+
+/* info calendario */
+.calendario-info {
+    background: linear-gradient(135deg,#7c3aed,#a855f7);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.calendario-info h3 {
+    font-size: .95rem;
+    margin-bottom: 6px;
+}
+
+.calendario-info p {
+    font-size: .85rem;
+    line-height: 1.4;
+}
+
+/* ===== HORARIOS ===== */
+.horas-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.horas-grid button {
+    padding: 11px;
+    border-radius: 8px;
+    border: 2px solid #e9d5ff;
+    background: #faf5ff;
+    cursor: pointer;
+    font-weight: 700;
+    transition: .2s;
+}
+
+/* hover */
+.horas-grid button:hover {
+    background: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+/* hora seleccionada */
+.horas-grid button.selected {
+    background: linear-gradient(135deg,#6d28d9,#9333ea);
+    color: white;
+    border-color: #6d28d9;
+    box-shadow: 0 4px 15px rgba(109,40,217,.4);
+}
+
+/* ===== FORMULARIO ===== */
+.formulario-cita form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.formulario-cita input,
+.formulario-cita select {
+    padding: 11px;
+    border-radius: 8px;
+    border: 2px solid #e9d5ff;
+    font-weight: 600;
+}
+
+.formulario-cita input:focus,
+.formulario-cita select:focus {
+    outline: none;
+    border-color: #a855f7;
+}
+
+/* botón */
+.formulario-cita button {
+    padding: 13px;
+    background: linear-gradient(135deg,#7c3aed,#a855f7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.formulario-cita button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(124,58,237,.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .peluqueria-cita {
+        grid-template-columns: 1fr;
+    }
+
+    .formulario-cita {
+        grid-column: auto;
+    }
+
+    .horas-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .horas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .peluqueria-header h1 {
+        font-size: 1.9rem;
+    }
+}
