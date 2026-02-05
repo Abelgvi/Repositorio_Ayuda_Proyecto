@@ -1,0 +1,383 @@
+/* ===== CONTENIDO GENERAL ===== */
+/* Contenedor principal del contenido de la página */
+.contenido {
+  position: relative;
+  /* Para posibles elementos absolutos dentro */
+  width: 100%;
+  /* Ocupa todo el ancho */
+  padding-top: 140px;
+  /* Espacio superior para no tapar el header */
+  text-align: center;
+  /* Centra el texto dentro del contenido */
+}
+
+/* Wrapper interno del contenido */
+.contenido-wrapper {
+  padding: 40px;
+  /* Espaciado interno */
+  max-width: 1400px;
+  /* Máximo ancho */
+  margin: auto;
+  /* Centra el wrapper horizontalmente */
+}
+
+/* ===== IMÁGENES CIRCULARES ===== */
+/* Contenedor de las imágenes circulares */
+.imagenes-circulares {
+  display: flex;
+  /* Usa flexbox */
+  justify-content: center;
+  /* Centra horizontalmente */
+  gap: 30px;
+  /* Espacio entre imágenes */
+  flex-wrap: wrap;
+  /* Permite que se ajusten en varias filas */
+  margin-top: 50px;
+  /* Separación superior */
+}
+
+/* Cada elemento individual dentro del contenedor */
+.circulo-item {
+  text-decoration: none;
+  /* Quita subrayado */
+  text-align: center;
+  /* Centra el contenido */
+  transition: transform 0.3s ease;
+  /* Animación suave al escalar */
+}
+
+/* Imagen dentro del círculo */
+.circulo-item img {
+  width: 150px;
+  /* Ancho de la imagen */
+  height: 150px;
+  /* Alto de la imagen */
+  border-radius: 50%;
+  /* Hace la imagen circular */
+  border: 4px solid #0f5fa6;
+  /* Borde alrededor de la imagen */
+  object-fit: cover;
+  /* Ajusta la imagen para cubrir el círculo */
+}
+
+/* Texto debajo de la imagen */
+.circulo-item p {
+  margin-top: 10px;
+  /* Espaciado superior */
+  color: white;
+  /* Color del texto */
+  font-weight: bold;
+  /* Texto en negrita */
+}
+
+/* Efecto al pasar el mouse por el círculo */
+.circulo-item:hover {
+  transform: scale(1.1);
+  /* Aumenta ligeramente de tamaño */
+}
+
+
+/* ===== OFERTAS ===== */
+/* Sección principal de ofertas */
+.ofertas-section {
+  margin-top: 80px;
+  /* Espacio superior para separar del contenido anterior */
+  padding: 40px 20px;
+  /* Espaciado interno */
+  background: rgba(75, 46, 138, 0.3);
+  /* Fondo semitransparente */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* Sombra suave alrededor */
+  color: white;
+  /* Color del texto general */
+}
+
+/* Título principal de la sección de ofertas */
+.ofertas-titulo {
+  font-size: 2.5rem;
+  /* Tamaño grande para destacar */
+  color: #b794ff;
+  /* Color violeta claro */
+  margin-bottom: 15px;
+  /* Separación inferior */
+}
+
+/* Subtítulo de la sección */
+.ofertas-subtitulo {
+  font-size: 1.2rem;
+  /* Tamaño más pequeño que el título */
+  margin-bottom: 40px;
+  /* Espaciado inferior para separar del grid */
+}
+
+/* Grid que contiene todas las tarjetas de ofertas */
+.ofertas-grid {
+  display: grid;
+  /* Usamos grid para organizar las tarjetas */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Columnas adaptables */
+  gap: 30px;
+  /* Espacio entre tarjetas */
+}
+
+/* Tarjeta individual de oferta */
+.oferta-card {
+  background: #0f5fa6;
+  /* Fondo azul */
+  border-radius: 14px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  /* Oculta cualquier contenido que sobresalga */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  /* Sombra para dar profundidad */
+  display: flex;
+  /* Flex vertical */
+  flex-direction: column;
+  /* Contenido de arriba hacia abajo */
+  transition: transform 0.3s ease;
+  /* Animación suave al interactuar */
+}
+
+/* Efecto hover para levantar la tarjeta */
+.oferta-card:hover {
+  transform: translateY(-5px);
+  /* Se eleva ligeramente */
+}
+
+/* Contenedor de la imagen de la oferta */
+.oferta-imagen {
+  height: 200px;
+  /* Altura fija de la imagen */
+  background: linear-gradient(135deg, #0f5fa6, #112bac);
+  /* Degradado de fondo */
+  position: relative;
+  /* Para posicionar badge sobre la imagen */
+  display: flex;
+  /* Flex para centrar la imagen si se ajusta */
+  align-items: center;
+  /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  overflow: hidden;
+  /* Oculta cualquier contenido que sobresalga */
+}
+
+/* Imagen dentro de la tarjeta */
+.oferta-imagen img {
+  width: 100%;
+  /* Ocupa todo el ancho */
+  height: 100%;
+  /* Ocupa toda la altura */
+  object-fit: cover;
+  /* Ajusta la imagen manteniendo proporción y recorta si es necesario */
+}
+
+/* Badge que indica descuento */
+.oferta-badge {
+  position: absolute;
+  /* Posicionado sobre la imagen */
+  top: 15px;
+  /* Separación superior */
+  right: 15px;
+  /* Separación derecha */
+  background: #7b4bff;
+  /* Fondo violeta */
+  padding: 8px 15px;
+  /* Espaciado interno */
+  border-radius: 25px;
+  /* Bordes redondeados tipo cápsula */
+  font-weight: bold;
+  /* Texto en negrita */
+  z-index: 2;
+  /* Encima de la imagen */
+}
+
+/* Contenido textual de la tarjeta */
+.oferta-contenido {
+  padding: 22px;
+  /* Espaciado interno */
+  display: flex;
+  /* Flex vertical */
+  flex-direction: column;
+  /* Organiza contenido de arriba a abajo */
+  flex-grow: 1;
+  /* Ocupa todo el espacio disponible */
+  gap: 12px;
+  /* Separación entre elementos */
+}
+
+/* Título de la oferta */
+.oferta-titulo {
+  font-size: 1.4rem;
+  /* Tamaño del texto */
+  font-weight: bold;
+  /* Negrita */
+  color: white;
+  /* Texto blanco */
+  margin-bottom: 5px;
+  /* Separación inferior */
+}
+
+/* Descripción de la oferta */
+.oferta-descripcion {
+  font-size: 1rem;
+  /* Tamaño estándar */
+  line-height: 1.5;
+  /* Altura de línea para mejor lectura */
+  color: #e0e0ff;
+  /* Color de texto violeta claro */
+  flex-grow: 1;
+  /* Ocupa espacio restante si es necesario */
+}
+
+/* Contenedor de precios */
+.oferta-precio {
+  margin: 15px 0;
+  /* Separación superior e inferior */
+  display: flex;
+  /* Flex horizontal */
+  align-items: center;
+  /* Centrado vertical */
+  gap: 12px;
+  /* Espacio entre precios */
+}
+
+/* Precio anterior (tachado) */
+.precio-anterior {
+  text-decoration: line-through;
+  /* Línea para indicar precio antiguo */
+  color: #999;
+  /* Gris tenue */
+  font-size: 1.1rem;
+  /* Tamaño del texto */
+}
+
+/* Precio actual */
+.precio-actual {
+  color: #b794ff;
+  /* Violeta claro */
+  font-size: 1.5rem;
+  /* Más grande para destacar */
+  font-weight: bold;
+  /* Negrita */
+}
+
+/* Botón dentro de la tarjeta */
+.oferta-boton {
+  width: 100%;
+  /* Ocupa todo el ancho */
+  margin-top: auto;
+  /* Se empuja hacia abajo */
+  display: inline-flex;
+  /* Flex para centrar contenido */
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  height: 48px;
+  /* Altura del botón */
+  padding: 0 24px;
+  /* Espaciado horizontal */
+  background: linear-gradient(135deg, #7b4bff, #4b2e8a);
+  /* Degradado violeta */
+  color: #e0e0ff;
+  /* Texto color violeta claro */
+  font-weight: bold;
+  /* Negrita */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  border: 2px solid #4b2e8a;
+  /* Borde del botón */
+  cursor: pointer;
+  /* Cursor pointer */
+  font-size: 1.05rem;
+  /* Tamaño del texto */
+  text-transform: uppercase;
+  /* Texto en mayúsculas */
+  letter-spacing: 1px;
+  /* Espaciado entre letras */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  /* Sombra del botón */
+  transition: all 0.3s ease;
+  /* Transición suave */
+}
+
+/* Efecto hover sobre botón de la oferta */
+.oferta-boton:hover {
+  background: linear-gradient(135deg, #8c5fff, #5c3ab5);
+  /* Cambia degradado */
+  transform: scale(1.05);
+  /* Aumenta tamaño ligeramente */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  /* Sombra más pronunciada */
+}
+
+.categories-section {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+    padding: 0 2rem;
+}
+
+.category-item {
+    text-align: center;
+    max-width: 120px;
+}
+
+.category-circle {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 0.8rem auto;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    
+}
+
+
+
+.category-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.category-circle:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(65, 215, 107, 0.3);
+}
+
+.category-item p {
+    font-family: var(--font-heading);
+    font-weight: bold;
+    color: var(--color-accent);
+}
+
+
+.featured {
+    padding: 0 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+

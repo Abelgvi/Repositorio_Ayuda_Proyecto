@@ -1,0 +1,362 @@
+/* ===== GALERÍA ===== */
+
+/* Contenedor principal de la sección de galería */
+.galeria-section {
+  margin: 80px auto;
+  /* Espaciado vertical y centrado */
+  width: 95%;
+  /* Ocupa casi todo el ancho disponible */
+  max-width: 1800px;
+  /* Ancho máximo */
+  padding: 40px 20px;
+  /* Espaciado interno */
+  background: rgba(75, 46, 138, 0.3);
+  /* Fondo violeta semitransparente */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* Sombra suave */
+  color: white;
+  /* Color del texto */
+}
+
+/* Título de la galería */
+.galerias-titulo {
+  font-size: 2.5rem;
+  /* Tamaño grande */
+  color: #b794ff;
+  /* Violeta claro */
+  margin-bottom: 15px;
+  /* Separación inferior */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil */
+}
+
+/* Grid para las tarjetas de la galería */
+.galeria-grid {
+  display: grid;
+  /* Sistema de grillas */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Columnas adaptables */
+  gap: 20px;
+  /* Separación entre tarjetas */
+  margin-top: 30px;
+  /* Separación superior */
+}
+
+/* Tarjeta individual de galería */
+.galeria-card {
+  background: #0f5fa6;
+  /* Fondo azul */
+  color: white;
+  /* Texto blanco */
+  border-radius: 16px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  /* Evita que contenido se salga */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  /* Sombra */
+  display: flex;
+  /* Flex vertical */
+  flex-direction: column;
+  /* De arriba a abajo */
+  transition: transform 0.3s ease;
+  /* Animación al interactuar */
+}
+
+/* Efecto hover sobre la tarjeta de galería */
+.galeria-card:hover {
+  transform: translateY(-5px);
+  /* Se eleva ligeramente */
+}
+
+/* Contenedor de la imagen dentro de la tarjeta */
+.galeria-imagen {
+  width: 100%;
+  /* Ancho completo */
+  height: 220px;
+  /* Altura fija */
+  display: flex;
+  /* Flexbox */
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  overflow: hidden;
+  /* Oculta lo que sobresalga */
+  position: relative;
+  /* Para posicionar elementos internos */
+  background-color: #000;
+  /* Fondo negro */
+  border-bottom: 3px solid #7b4bff;
+  /* Línea violeta inferior */
+}
+
+/* Imagen de la galería */
+.galeriaImg {
+  width: 100%;
+  /* Ancho completo */
+  height: 100%;
+  /* Altura completa */
+  object-fit: cover;
+  /* Ajusta la imagen manteniendo proporciones */
+  transition: transform 0.3s ease;
+  /* Animación al hacer hover */
+}
+
+/* Efecto hover sobre la imagen */
+.galeriaImg:hover {
+  transform: scale(1.05);
+  /* Zoom ligero */
+}
+
+/* Contenido dentro de la tarjeta de galería */
+.galeria-contenido {
+  padding: 15px;
+  /* Espaciado interno */
+  text-align: center;
+  /* Centrado del texto */
+}
+
+/* Título dentro de la tarjeta */
+.galeria-titulo {
+  font-size: 1.2rem;
+  /* Tamaño de texto */
+  margin-bottom: 8px;
+  /* Espaciado inferior */
+}
+
+/* Descripción dentro de la tarjeta */
+.galeria-descripcion {
+  font-size: 0.95rem;
+  /* Tamaño de fuente ligeramente menor */
+  line-height: 1.4;
+  /* Altura de línea */
+}
+
+/* ===== CARRUSEL DE VIDEOS ESTILO INSTAGRAM ===== */
+
+/* Contenedor principal del carrusel */
+.videos-carrusel-container {
+  position: relative;
+  /* Para posicionar botones e indicadores dentro */
+  max-width: 600px;
+  /* Ancho máximo del carrusel */
+  margin: 40px auto;
+  /* Centrado horizontal y margen vertical */
+  padding: 0 60px;
+  /* Espaciado horizontal interno */
+}
+
+/* Contenedor interno del carrusel que oculta el overflow */
+.videos-carrusel {
+  position: relative;
+  /* Para posicionar elementos internos */
+  overflow: hidden;
+  /* Oculta lo que se sale del contenedor */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  background: #000;
+  /* Fondo negro */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  /* Sombra externa */
+}
+
+/* Track que contiene todas las diapositivas del carrusel */
+.carrusel-track {
+  display: flex;
+  /* Flex horizontal para las slides */
+  transition: transform 0.5s ease-in-out;
+  /* Animación de movimiento */
+}
+
+/* Diapositiva individual */
+.video-slide {
+  min-width: 100%;
+  /* Cada slide ocupa todo el ancho del contenedor */
+  display: flex;
+  /* Flex vertical */
+  flex-direction: column;
+  /* Elementos dentro de arriba hacia abajo */
+  background: #0f5fa6;
+  /* Fondo azul */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  /* Oculta contenido que sobresalga */
+}
+
+/* Wrapper de cada video */
+.video-wrapper {
+  width: 100%;
+  /* Ancho completo */
+  height: 500px;
+  /* Altura fija */
+  background: #000;
+  /* Fondo negro */
+  display: flex;
+  /* Flex para centrar video */
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  position: relative;
+  /* Para elementos internos */
+}
+
+/* Estilo del video */
+.galeriaVideo {
+  width: 100%;
+  /* Ancho completo del contenedor */
+  height: 100%;
+  /* Altura completa del contenedor */
+  object-fit: contain;
+  /* Mantiene proporción dentro del contenedor */
+  background-color: black;
+  /* Fondo negro por si no hay video */
+}
+
+/* Información debajo del video */
+.video-info {
+  padding: 20px;
+  /* Espaciado interno */
+  background: linear-gradient(135deg, #0f5fa6, #112bac);
+  /* Fondo degradado azul */
+  text-align: center;
+  /* Texto centrado */
+}
+
+/* Título de cada video */
+.video-info h3 {
+  font-size: 1.3rem;
+  /* Tamaño de fuente */
+  margin-bottom: 10px;
+  /* Espaciado inferior */
+  color: #b794ff;
+  /* Violeta claro */
+}
+
+/* Descripción de cada video */
+.video-info p {
+  font-size: 1rem;
+  /* Tamaño de fuente */
+  line-height: 1.5;
+  /* Altura de línea */
+  color: #e0e0ff;
+  /* Texto claro */
+}
+
+/* ===== BOTONES DE NAVEGACIÓN ===== */
+
+/* Botones izquierda/derecha del carrusel */
+.carrusel-btn {
+  position: absolute;
+  /* Posicionado respecto al contenedor */
+  top: 50%;
+  /* Centrado vertical */
+  transform: translateY(-50%);
+  /* Ajuste vertical exacto */
+  background: rgba(123, 75, 255, 0.9);
+  /* Fondo violeta semitransparente */
+  border: none;
+  /* Sin borde */
+  color: white;
+  /* Texto blanco */
+  font-size: 2rem;
+  /* Tamaño del símbolo */
+  width: 50px;
+  /* Ancho del botón */
+  height: 50px;
+  /* Alto del botón */
+  border-radius: 50%;
+  /* Circular */
+  cursor: pointer;
+  /* Cursor de puntero */
+  z-index: 10;
+  /* Por encima de otros elementos */
+  display: flex;
+  /* Para centrar icono */
+  align-items: center;
+  /* Centrado vertical */
+  justify-content: center;
+  /* Centrado horizontal */
+  transition: all 0.3s ease;
+  /* Animación al interactuar */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Sombra */
+}
+
+/* Efecto hover en los botones */
+.carrusel-btn:hover {
+  background: rgba(140, 95, 255, 1);
+  /* Fondo violeta más brillante */
+  transform: translateY(-50%) scale(1.1);
+  /* Zoom y centrado vertical */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  /* Sombra más grande */
+}
+
+/* Posición específica de botón anterior */
+.carrusel-btn.prev {
+  left: 0;
+  /* Pegado a la izquierda */
+}
+
+/* Posición específica de botón siguiente */
+.carrusel-btn.next {
+  right: 0;
+  /* Pegado a la derecha */
+}
+
+/* ===== INDICADORES DE POSICIÓN ===== */
+
+/* Contenedor de los indicadores */
+.carrusel-indicators {
+  display: flex;
+  /* Flex horizontal */
+  justify-content: center;
+  /* Centrado */
+  gap: 8px;
+  /* Separación entre indicadores */
+  margin-top: 20px;
+  /* Separación superior */
+}
+
+/* Cada punto indicador */
+.indicator {
+  width: 8px;
+  /* Ancho del punto */
+  height: 8px;
+  /* Alto del punto */
+  border-radius: 50%;
+  /* Circular */
+  background: rgba(183, 148, 255, 0.3);
+  /* Color violeta semi-transparente */
+  cursor: pointer;
+  /* Cursor de puntero */
+  transition: all 0.3s ease;
+  /* Animación al cambiar de estado */
+}
+
+/* Indicador activo */
+.indicator.active {
+  background: #b794ff;
+  /* Color violeta brillante */
+  width: 24px;
+  /* Más ancho para resaltar */
+  border-radius: 4px;
+  /* Bordes ligeramente redondeados */
+}
+
+/* ===== SALTO DE LÍNEA ===== */
+
+/* Contenedor para separar secciones de imágenes y videos */
+.salto-linea {
+  grid-column: 1 / -1;
+  /* Ocupa todas las columnas del grid */
+  padding: 40px 0 20px 0;
+  /* Espaciado superior e inferior */
+  text-align: center;
+  /* Centrado del texto */
+}
+
