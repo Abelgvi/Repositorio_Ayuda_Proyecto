@@ -1,0 +1,358 @@
+/*  GALERÍA  */
+
+/* Contenedor principal de la sección de galería */
+.galeria-section {
+  margin: 100px auto 80px auto;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 30px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: #2c3e50;
+}
+
+/* Título PRINCIPAL de la galería - ESPECIAL */
+.galeria-section > h2.galerias-titulo:first-child {
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
+  color: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
+  }
+  50% {
+    box-shadow: 0 15px 50px rgba(124, 58, 237, 0.5);
+  }
+}
+
+/* Título de la galería - NORMAL */
+.galerias-titulo {
+  font-size: 3rem;
+  color: #5b21b6;
+  margin-bottom: 20px;
+  text-shadow: none;
+  font-weight: 900;
+  text-align: center;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.galerias-titulo::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Grid para las tarjetas de la galería */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+  padding: 0;
+}
+
+/* Tarjeta individual de galería */
+.galeria-card {
+  background: #fff;
+  color: #2c3e50;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* Efecto hover sobre la tarjeta de galería */
+.galeria-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.2);
+  border-color: #7c3aed;
+}
+
+/* Contenedor de la imagen dentro de la tarjeta */
+.galeria-imagen {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #f3e8ff, #fdf6ff);
+  border-bottom: none;
+}
+
+/* Imagen de la galería */
+.galeriaImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Efecto hover sobre la imagen */
+.galeria-card:hover .galeriaImg {
+  transform: scale(1.1);
+}
+
+/* Contenido dentro de la tarjeta de galería */
+.galeria-contenido {
+  padding: 22px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+/* Título dentro de la tarjeta */
+.galeria-titulo {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: #5b21b6;
+  font-weight: 700;
+}
+
+/* Descripción dentro de la tarjeta */
+.galeria-descripcion {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #7f8c8d;
+}
+
+/*  CARRUSEL DE VIDEOS ESTILO INSTAGRAM  */
+
+/* Contenedor principal del carrusel */
+.videos-carrusel-container {
+  position: relative;
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0;
+}
+
+/* Contenedor interno del carrusel que oculta el overflow */
+.videos-carrusel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  border: 3px solid #e9d5ff;
+}
+
+/* Track que contiene todas las diapositivas del carrusel */
+.carrusel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Diapositiva individual */
+.video-slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Wrapper de cada video */
+.video-wrapper {
+  width: 100%;
+  height: 500px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Estilo del video */
+.galeriaVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+}
+
+/* Información debajo del video */
+.video-info {
+  padding: 25px;
+  background: linear-gradient(135deg, #f3e8ff, #fdf6ff);
+  text-align: center;
+}
+
+/* Título de cada video */
+.video-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #5b21b6;
+  font-weight: 800;
+}
+
+/* Descripción de cada video */
+.video-info p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+
+/*  BOTONES DE NAVEGACIÓN  */
+
+/* Botones izquierda/derecha del carrusel */
+.carrusel-btn {
+  position: absolute;
+  top: 250px;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border: none;
+  color: white;
+  font-size: 2.2rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+  font-weight: 700;
+}
+
+/* Efecto hover en los botones */
+.carrusel-btn:hover {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+}
+
+/* Posición específica de botón anterior */
+.carrusel-btn.prev {
+  left: 10px;
+}
+
+/* Posición específica de botón siguiente */
+.carrusel-btn.next {
+  right: 10px;
+}
+
+/*  INDICADORES DE POSICIÓN  */
+
+/* Contenedor de los indicadores */
+.carrusel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+/* Cada punto indicador */
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c084fc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+}
+
+/* Hover sobre indicador */
+.indicator:hover {
+  opacity: 0.7;
+}
+
+/* Indicador activo */
+.indicator.active {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  width: 28px;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+/*  SALTO DE LÍNEA  */
+
+/* Contenedor para separar secciones de imágenes y videos */
+.salto-linea {
+  padding: 60px 0 30px 0;
+  text-align: center;
+}
+
+.salto-linea br {
+  display: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .galeria-section {
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .galeria-section > h2.galerias-titulo:first-child {
+    font-size: 2.5rem;
+    padding: 25px 30px;
+  }
+
+  .galerias-titulo {
+    font-size: 2.2rem;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .videos-carrusel-container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .video-wrapper {
+    height: 400px;
+  }
+
+  .carrusel-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+    top: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-section > h2.galerias-titulo:first-child {
+    font-size: 2rem;
+    padding: 20px 25px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-wrapper {
+    height: 300px;
+  }
+  
+  .carrusel-btn {
+    top: 150px;
+  }
+}

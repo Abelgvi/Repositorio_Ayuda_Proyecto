@@ -1,0 +1,263 @@
+/*  TIENDA */
+
+/* Contenedor principal */
+.shop-container {
+    display: block;
+    padding: 0;
+    max-width: 100%;
+    margin: 100px 0 100px 0; /* separación del header */
+}
+
+/*  ASIDE - FILTROS  */
+.filters {
+    width: 280px;
+    background: white;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(124, 58, 237, 0.12);
+    height: fit-content;
+    max-height: calc(100vh - 80px); /* ← Ajustado a 140px para estar más cerca del footer */
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    border: 2px solid #e9d5ff;
+    overflow: visible;
+    z-index: 100;
+}
+
+/* Para que el contenido de filtros NO tenga scroll */
+.filters-content {
+    padding: 18px; /* ← Aumentado de 15px a 18px */
+    overflow: visible;
+}
+
+/* Header filtros */
+.filters h3 {
+    margin: 0;
+    padding: 20px; /* ← Aumentado de 18px a 20px */
+    font-size: 1.4rem; /* ← Aumentado de 1.3rem a 1.4rem */
+    font-weight: 800;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.filter-group {
+    margin-bottom: 20px; /* ← Aumentado de 18px a 20px */
+    padding-bottom: 18px; /* ← Aumentado de 15px a 18px */
+    border-bottom: 2px solid #f3e8ff;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-group h4 {
+    margin-bottom: 14px; /* ← Aumentado de 12px a 14px */
+    font-size: 1.1rem; /* ← Aumentado de 1.05rem a 1.1rem */
+    font-weight: 700;
+    color: #5b21b6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group h4::before {
+    content: '';
+    width: 4px;
+    height: 17px; /* ← Aumentado de 16px a 17px */
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-radius: 2px;
+}
+
+.filter-group ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.filter-group li {
+    margin-bottom: 9px; /* ← Aumentado de 8px a 9px */
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 9px 11px; /* ← Aumentado de 8px 10px a 9px 11px */
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.92rem; /* ← Aumentado de 0.9rem a 0.92rem */
+    font-weight: 500;
+    color: #4c1d95;
+}
+
+.filter-group label:hover {
+    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    transform: translateX(3px);
+}
+
+/* Checkboxes personalizados */
+.filter-group input[type="checkbox"] {
+    appearance: none;
+    width: 19px; /* ← Aumentado de 18px a 19px */
+    height: 19px; /* ← Aumentado de 18px a 19px */
+    border: 2px solid #c084fc;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.filter-group input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    border-color: #7c3aed;
+}
+
+.filter-group input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*  SECCIÓN PRODUCTOS  */
+.products-section {
+    margin-left: 330px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.products-section h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.products-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #7c3aed, #a855f7, #c084fc);
+    border-radius: 2px;
+}
+
+/*  GRID PRODUCTOS  */
+#products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    width: 100%;
+    align-items: stretch;
+}
+
+/*  TARJETA PRODUCTO  */
+.product-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(91, 33, 182, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(124, 58, 237, 0.25);
+}
+
+/* Imagen */
+.product-image-container {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    height: 200px;
+    width: 100%;
+}
+
+.product-image-placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image-placeholder {
+    transform: scale(1.08);
+}
+
+/* Contenido */
+.product-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #4c1d95;
+    font-weight: 700;
+}
+
+.product-card p {
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-top: auto;
+    margin-bottom: 15px;
+    color: #7c3aed;
+}
+
+/* Botón */
+.btn-primary.btn-add-cart {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    width: 100%;
+}
+
+.btn-primary.btn-add-cart:hover {
+    background: linear-gradient(135deg, #6d28d9, #9333ea);
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 60px;
+    grid-column: 1 / -1;
+}
+
+/* Sin resultados */
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+    grid-column: 1 / -1;
+}

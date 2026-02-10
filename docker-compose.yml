@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: laravel-app
+    restart: always
+    volumes:
+      - "/home/ubuntu/petpoint/petpoint:/var/www/html"
+    networks:
+      - petpoint
+
+  web:
+    image: nginx:latest
+    container_name: laravel-nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - "/home/ubuntu/petpoint/petpoint:/var/www/html"
+      - "/home/ubuntu/petpoint/petpoint/nginx.conf:/etc/nginx/conf.d/default.conf"
+    networks:
+      - petpoint
+
+networks:
+  petpoint:
+    driver: bridge

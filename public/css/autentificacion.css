@@ -1,0 +1,248 @@
+/* ===== SECCIÓN DE LOGIN/REGISTRO ===== */
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 100px 20px;
+  position: relative;
+}
+
+/* Título principal de la sección */
+.login-titulo {
+  font-size: 3rem;
+  background: linear-gradient(135deg, #5b21b6, #7c3aed, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 900;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.login-titulo::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed, #a855f7, #c084fc);
+  border-radius: 2px;
+}
+
+/* Wrapper del formulario */
+.login-wrapper {
+  width: 100%;
+  max-width: 550px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(124, 58, 237, 0.2);
+  padding: 50px 60px;
+  border: 2px solid #e9d5ff;
+  transition: all 0.3s ease;
+}
+
+.login-wrapper:hover {
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Formulario de login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Labels del formulario */
+.login-form label {
+  color: #5b21b6;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: -15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-form label::before {
+  content: '';
+  width: 4px;
+  height: 18px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  border-radius: 2px;
+}
+
+/* Inputs del formulario */
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="tel"] {
+  width: 100%;
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #f3e8ff, #fdf6ff);
+  border: 2px solid #e9d5ff;
+  border-radius: 12px;
+  color: #4c1d95;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+/* Placeholder de los inputs */
+.login-form input::placeholder {
+  color: #a78bfa;
+  opacity: 0.7;
+}
+
+/* Efecto focus en inputs */
+.login-form input:focus {
+  border-color: #7c3aed;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Botón del formulario */
+.login-form .btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover del botón */
+.login-form .btn:hover {
+  background: linear-gradient(135deg, #6d28d9, #9333ea);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(124, 58, 237, 0.4);
+}
+
+/* Efecto active del botón */
+.login-form .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.3);
+}
+
+/* Mensajes de error */
+.login-form > div {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border: 2px solid #fca5a5;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.login-form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.login-form li {
+  color: #dc2626;
+  font-size: 0.95rem;
+  padding: 5px 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-form li::before {
+  content: '⚠';
+  font-size: 1.1rem;
+}
+
+/* Texto inferior */
+.login-section > p {
+  margin-top: 30px;
+  color: #5b21b6;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.login-section > p a {
+  color: #7c3aed;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.login-section > p a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #7c3aed, #a855f7);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.login-section > p a:hover {
+  color: #a855f7;
+  background: linear-gradient(135deg, #f3e8ff, #fdf6ff);
+}
+
+.login-section > p a:hover::after {
+  width: 80%;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .login-wrapper {
+    padding: 35px 30px;
+  }
+
+  .login-titulo {
+    font-size: 2.3rem;
+  }
+
+  .login-section {
+    padding-top: 160px;
+  }
+  
+  .login-form {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-wrapper {
+    padding: 30px 25px;
+  }
+
+  .login-titulo {
+    font-size: 2rem;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="email"],
+  .login-form input[type="password"],
+  .login-form input[type="tel"] {
+    padding: 12px 16px;
+  }
+}
